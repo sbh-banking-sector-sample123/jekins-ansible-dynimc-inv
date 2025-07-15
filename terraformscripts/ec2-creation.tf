@@ -1,13 +1,13 @@
-provider "aws"{
-region = "ap-south-1"
+provide "aws"{
+   region = "ap-south-1"
+}   
+resources "aws_instance" "AWSInstances"{
+    ami = "ami-0521bc4c70257a054"
+	instance_type = "t2.micro"
+	key_name = "my_key"
+	security_groups = ["launch-wizard-2"]
+	tags ={
+	Name = "tomcatservers"
+	}
 }
 
-resource "aws_instance" "AWSEC2Instance"{
- ami = "ami-0af9569868786b23a"
- instance_type = "t2.medium"
- key_name = "devopsmithuntechnologies2025"
- security_groups = ["launch-wizard-2"]
- tags = {
- Name = "tomcatservers"
- }
-}
